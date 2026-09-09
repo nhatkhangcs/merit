@@ -1,0 +1,22 @@
+[
+  {
+    "source": "data/spider_data/train_spider.json#record=0;db_id=department_management;sha256=c43d0d72e59e1a9e1a60837da9bf70d5a6277226bdb7f634d544f380646f527a",
+    "question": "How many heads of the departments are older than 56 ?",
+    "sql": "SELECT count(*) FROM head WHERE age  >  56"
+  },
+  {
+    "source": "data/spider_data/train_spider.json#record=34;db_id=farm;sha256=c43d0d72e59e1a9e1a60837da9bf70d5a6277226bdb7f634d544f380646f527a",
+    "question": "Show the years and the official names of the host cities of competitions.",
+    "sql": "SELECT T2.Year ,  T1.Official_Name FROM city AS T1 JOIN farm_competition AS T2 ON T1.City_ID  =  T2.Host_city_ID"
+  },
+  {
+    "source": "data/spider_data/train_spider.json#record=225;db_id=book_2;sha256=c43d0d72e59e1a9e1a60837da9bf70d5a6277226bdb7f634d544f380646f527a",
+    "question": "Show publishers that have more than one publication.",
+    "sql": "SELECT Publisher FROM publication GROUP BY Publisher HAVING COUNT(*)  >  1"
+  },
+  {
+    "source": "data/spider_data/train_spider.json#record=62;db_id=student_assessment;sha256=c43d0d72e59e1a9e1a60837da9bf70d5a6277226bdb7f634d544f380646f527a",
+    "question": "List the id of students who never attends courses?",
+    "sql": "SELECT student_id FROM students WHERE student_id NOT IN (SELECT student_id FROM student_course_attendance)"
+  }
+]

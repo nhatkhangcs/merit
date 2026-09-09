@@ -1,0 +1,7 @@
+click==8.4.2
+func-timeout==4.3.5
+joblib==1.5.3
+nltk==3.9.1
+regex==2026.7.19
+sqlparse==0.5.3
+tqdm==4.67.0

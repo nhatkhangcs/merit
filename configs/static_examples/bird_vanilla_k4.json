@@ -1,0 +1,26 @@
+[
+  {
+    "source": "birdsql/bird23-train-filtered@7abc970ccea1c7cbb3c1a0c220c078c64fc6da89/data/train-00000-of-00001.jsonl#record=0;db_id=movie_platform;sha256=2ee64aa593e1adc59be7d5b9ce2395372a8ee27fdd94a3fb4d2fe09f3cd34bc8",
+    "question": "Who is the director of the movie Sex, Drink and Bloodshed?",
+    "sql": "SELECT director_name FROM movies WHERE movie_title = 'Sex, Drink and Bloodshed'",
+    "evidence": "Sex, Drink and Bloodshed refers to movie title = 'Sex, Drink and Bloodshed';"
+  },
+  {
+    "source": "birdsql/bird23-train-filtered@7abc970ccea1c7cbb3c1a0c220c078c64fc6da89/data/train-00000-of-00001.jsonl#record=35;db_id=book_publishing_company;sha256=2ee64aa593e1adc59be7d5b9ce2395372a8ee27fdd94a3fb4d2fe09f3cd34bc8",
+    "question": "What is the title with the most ordered quantity in year 1992?",
+    "sql": "SELECT T2.title FROM sales AS T1 INNER JOIN titles AS T2 ON T1.title_id = T2.title_id WHERE STRFTIME('%Y', T1.ord_date) = '1992' ORDER BY T1.qty DESC LIMIT 1",
+    "evidence": "total quantity refers to qty; most ordered quantity refers to order with the highest quantity where MAX(count(qty)); date refers to ord_date; year 1992 refers to YEAR(ord_date) = 1992"
+  },
+  {
+    "source": "birdsql/bird23-train-filtered@7abc970ccea1c7cbb3c1a0c220c078c64fc6da89/data/train-00000-of-00001.jsonl#record=415;db_id=computer_student;sha256=2ee64aa593e1adc59be7d5b9ce2395372a8ee27fdd94a3fb4d2fe09f3cd34bc8",
+    "question": "Please list the IDs of the professors that teaches more than 3 courses.",
+    "sql": "SELECT T1.p_id FROM taughtBy AS T1 INNER JOIN person AS T2 ON T1.p_id = T2.p_id WHERE T2.professor = 1 GROUP BY T1.p_id HAVING COUNT(DISTINCT T1.course_id) > 3",
+    "evidence": "IDs of the professors refers to taughtBy.p_id and professor = 1; teaches more than 3 courses  refers to count(course_id) > 3"
+  },
+  {
+    "source": "birdsql/bird23-train-filtered@7abc970ccea1c7cbb3c1a0c220c078c64fc6da89/data/train-00000-of-00001.jsonl#record=268;db_id=codebase_comments;sha256=2ee64aa593e1adc59be7d5b9ce2395372a8ee27fdd94a3fb4d2fe09f3cd34bc8",
+    "question": "What is the most liked repository? Indicate its github address and the amount of stars it has received.",
+    "sql": "SELECT Url, Stars FROM Repo WHERE Stars = ( SELECT MAX(Stars) FROM Repo )",
+    "evidence": "more stars mean more people like this repository; most liked refers to max(Stars); the github address of repository refers to Url;"
+  }
+]

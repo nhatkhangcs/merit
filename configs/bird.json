@@ -1,0 +1,61 @@
+{
+  "dataset": {
+    "name": "bird",
+    "examples_path": "data/BIRD/dev.json",
+    "tables_path": "data/BIRD/dev_tables.json",
+    "database_root": "data/BIRD/dev_databases"
+  },
+  "run_root": "runs/bird",
+  "initial_cache_path": "cache/bird_qwen2.5-7b_official-v1.json",
+  "evaluation_protocol": "bird_damo_exec_483554e_30s_v1",
+  "method_name": "merit_full",
+  "feedback_regime": "denotation_confirmed",
+  "model": {
+    "name": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "tokenizer_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "embedding_name": "BAAI/bge-large-en-v1.5",
+    "embedding_revision": "d4aa6901d3a41ba39fb536a557fa166f842b0e09",
+    "device_map": "auto",
+    "quantization": "4bit"
+  },
+  "retrieval": {
+    "min_typed_pool": 3,
+    "max_positive": 3,
+    "max_negative": 1,
+    "dense_weight": 0.75,
+    "bm25_weight": 0.25,
+    "type_match_weight": 0.10,
+    "fallback_pool": "legal_same_polarity",
+    "index_backend": "faiss"
+  },
+  "generation": {
+    "max_input_tokens": 4096,
+    "max_output_tokens": 512,
+    "initial_do_sample": false,
+    "initial_temperature": 0.0,
+    "repair_temperature": 0.0,
+    "self_consistency_samples": 1
+  },
+  "random_seed": 42,
+  "stream_order_seed": 0,
+  "max_repair_steps": 7,
+  "reference_timeout_seconds": 30.0,
+  "static_examples_path": "configs/static_examples/bird_vanilla_k4.json",
+  "official_evaluator_command": [],
+  "package_versions": {
+    "accelerate": "1.0.1",
+    "bitsandbytes": "0.47.0",
+    "faiss-gpu-cu12": "1.9.0.0",
+    "func-timeout": "4.3.5",
+    "huggingface-hub": "0.26.2",
+    "numpy": "1.26.4",
+    "rank-bm25": "0.2.2",
+    "sentence-transformers": "3.2.1",
+    "sqlparse": "0.5.3",
+    "sqlglot": "25.34.1",
+    "torch": "2.7.1+cu128",
+    "tqdm": "4.67.0",
+    "transformers": "4.46.3"
+  }
+}
