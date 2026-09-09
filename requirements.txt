@@ -1,0 +1,13 @@
+accelerate==1.0.1
+bitsandbytes==0.47.0
+faiss-gpu-cu12==1.9.0.0
+huggingface-hub==0.26.2
+func-timeout==4.3.5
+numpy==1.26.4
+rank-bm25==0.2.2
+sentence-transformers==3.2.1
+sqlparse==0.5.3
+sqlglot==25.34.1
+torch==2.7.1+cu128
+tqdm==4.67.0
+transformers==4.46.3
