@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="289" viewBox="0 0 1280 289">
+  <rect x="0" y="0" width="1280" height="289" rx="28" fill="#ffffff"/>
+  <!-- agent glyph -->
+  <g transform="translate(70,44)">
+    <rect x="0" y="0" width="200" height="200" rx="44" fill="#2b3a67"/>
+    <line x1="100" y1="22" x2="100" y2="48" stroke="#ffffff" stroke-width="10" stroke-linecap="round"/>
+    <circle cx="100" cy="20" r="12" fill="#f2a541"/>
+    <rect x="34" y="56" width="132" height="104" rx="26" fill="#ffffff"/>
+    <circle cx="74" cy="100" r="15" fill="#2b3a67"/>
+    <circle cx="126" cy="100" r="15" fill="#2b3a67"/>
+    <rect x="70" y="128" width="60" height="10" rx="5" fill="#f2a541"/>
+  </g>
+  <text x="315" y="160" font-family="Helvetica, Arial, sans-serif" font-size="128" font-weight="700" fill="#2b3a67" letter-spacing="4">REALM</text>
+  <text x="790" y="160" font-family="Helvetica, Arial, sans-serif" font-size="128" font-weight="300" fill="#f2a541">2026</text>
+  <text x="318" y="228" font-family="Helvetica, Arial, sans-serif" font-size="40" fill="#4a5578">Workshop for REsearch on Agent Language Models</text>
+</svg>
